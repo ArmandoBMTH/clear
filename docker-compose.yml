@@ -7,13 +7,20 @@ services:
       context: .
       dockerfile: Movies.API/Dockerfile
     depends_on:
-     - sqlserverexpress
+      sqlserverexpress:
+        condition: service_healthy
   sqlserverexpress:
     image: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04
     container_name: sqlserverexpress
     environment:
       ACCEPT_EULA: Y
       SA_PASSWORD: testapp123.
-      MSSQL_PID: Developer
+      MSSQL_PID: Express
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "testapp123." -Q "SELECT 1" -b -o /dev/null
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
     ports:
       - 1433:1433

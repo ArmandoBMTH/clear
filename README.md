@@ -27,6 +27,7 @@ services:
 Once we have this, run the docker-compose with:
 
 ```Bash
+docker-compose build
 docker-compose up -d
 ```
 
@@ -78,3 +79,10 @@ I used different layers to try to represent a simple clean architecture.
 This frontend wasn't possible develop in React, instead I used Angular.
 
 I developed 2 functional components which are a `SearchComponent` and `CardComponent` and also I used devextreme to use some components of this framework.
+
+## Screenshots
+
+
+![](assets/image_movies.png)
+
+![](assets/image_actors.png)
