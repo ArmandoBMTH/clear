@@ -5,6 +5,7 @@ This project is the solution to clear's test
 - To have installed nodejs
 - To have installed Net core 3.1
 - To have installed docker and docker-compose
+- Do not have an activated instance of SQL Server
 
 ## Usage
 To be able to use this solucion first we need to download this repo, then we need to execute the backend solution.
