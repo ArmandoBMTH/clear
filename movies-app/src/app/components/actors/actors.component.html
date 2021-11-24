@@ -1,0 +1,73 @@
+<div class="container moveNav">
+  <div class="column">
+    <div class="col-sm-2">
+      <dx-button
+        stylingMode="contained"
+        text="Create actor"
+        type="default"
+        [width]="200"
+        (onClick)="showFormActor()"
+      >
+      </dx-button>
+    </div>
+    <div class="col-sm" style="margin-top: 10px;">
+      <dx-data-grid
+        id="gridContainer"
+        [dataSource]="actors"
+        keyExpr="actorId"
+        [allowColumnReordering]="true"
+        [allowColumnResizing]="true"
+        [columnAutoWidth]="true"
+        [showBorders]="true"
+        [height]="500"
+      >
+        <dxi-column
+          caption="Name"
+          [width]="600"
+          [fixed]="true"
+          dataField="name"
+        ></dxi-column>
+        <dxi-column dataField="date" dataType="date" caption="Date Of Birth"></dxi-column>
+        <dxi-column caption="Edit">
+          <dx-button
+          type="default"
+          ></dx-button>
+        </dxi-column>
+      </dx-data-grid>
+    </div>
+  </div>
+</div>
+
+
+<dx-popup
+  [width]="500"
+  [height]="300"
+  [showTitle]="true"
+  title="Add New Actor"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [showCloseButton]="true"
+  container=".dx-viewport"
+  [(visible)]="popupVisible"
+>
+  <dx-form id="form" [formData]="currentActor">
+    <dxi-item dataField="name"></dxi-item>
+    <dxi-item
+      dataField="date"
+      editorType="dxDateBox"
+      [editorOptions]="{ width: '100%' }"
+    ></dxi-item>
+  </dx-form>
+  <div class="row">
+    <dx-button
+      class="position-absolute bottom-0 end-0"
+      stylingMode="contained"
+      text="Send"
+      type="success"
+      [width]="200"
+      (onClick)="sendNewActor()"
+      style="margin-top: 10px"
+    >
+    </dx-button>
+  </div>
+</dx-popup>

@@ -1,0 +1,43 @@
+.card{
+  cursor: pointer;
+  background: rgb(0 0 0 / 42%);
+    width: 200px;
+    height: 300px;
+    border-radius: 7px;
+    font-family: sans-serif;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 2px 1px #00000014;
+    margin: 1em;
+}
+
+.image{
+  height: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+body{
+  background: rgb(218, 161, 218);
+}
+
+.image_src{
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  border-radius: 7px;
+}
+
+.title{
+  font-size: 15px;
+    font-weight: bold;
+    font-family: revert;
+    margin-top: 15px;
+}
+
+.date{
+  float: right;
+  font-size: 13px;
+  margin-top: 20px;
+}
